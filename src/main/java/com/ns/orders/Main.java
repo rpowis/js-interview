@@ -39,7 +39,8 @@ public class Main {
     }
 
     private static HttpServer createServer() throws IOException {
-        URI uri = UriBuilder.fromUri("http://localhost/").port(9998).build();
+
+        URI uri = URI.create("http://localhost:9998/");
 
         ResourceConfig resourceConfig = new PackagesResourceConfig("com.ns.orders.resources");
         IoCComponentProviderFactory factory = new GuiceComponentProviderFactory(resourceConfig, Guice.createInjector());
